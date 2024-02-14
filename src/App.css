@@ -20,12 +20,12 @@ body {
     padding: 30px;
 }
 
-.logo { font-size: 20px; }
+.logo { font-size: 20px; margin-top: 16px}
 
-.navbar {
+.navbar ul {
     display: flex;
     gap: 20px;
-    height: fit-content;
+    list-style: none;
 }
 
 .navbar a {
@@ -38,7 +38,7 @@ body {
     font-size: 15px;
 }
 
-.navbar> a:hover {
+.navbar a:hover {
     scale: 110%;
 }
 
@@ -51,25 +51,22 @@ body {
 }
 
 .heading-primary {
-    color: #fff;
     text-transform: uppercase;
-
-    backface-visibility: hidden;
     margin-bottom: 30px;
 }
 
 .heading-primary-main {
-    display: block;
     font-size: 50px;
     font-weight: 400;
     letter-spacing: 5px;
+    animation: blink 12s infinite;
 }
 
 .heading-primary-sub {
     display: block;
     font-size: 18px;
     font-weight: 700;
-    letter-spacing: 7.4px;
+    letter-spacing: 7px;
 }
 
 .btn:link,
@@ -107,15 +104,14 @@ footer {
 
 .wcs {
     text-decoration: none;
-    color: deeppink;
+    color: #FF1493AD;
 }
 
 .wcs:hover {
-    border-bottom: solid 1px deeppink;
+    border-bottom: solid 1px #FF1493AD;
 }
 
 @media screen and (max-width: 760px) {
-
     .logo {
         display: none;
     }
@@ -129,5 +125,33 @@ footer {
         top: 85%;
         left: 20%;
     }
+}
 
+@media  screen and (min-width: 761px) and (max-width: 960px) {
+    footer {
+        position: absolute;
+        top: 85%;
+        left: 60%;
+    }
+}
+
+
+@keyframes blink {
+    20%,
+    24%,
+    55% {
+        color: #111;
+        text-shadow: none;
+    }
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+        text-shadow: 0 0 5px #FF1493AD, 0 0 15px #eee, 0 0 20px #FF1493AD, 0 0 40px #a00ac9, 0 0 60px #ff0000, 0 0 10px #970dc5, 0 0 98px #ff0000;
+        color: #fff;
+    }
 }
